@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#0a0a0a"/>
+  <rect x="40" y="30" width="520" height="45" rx="8" fill="#111" stroke="#0ff" stroke-width="1" opacity="0.6"/>
+  <rect x="60" y="44" width="80" height="14" rx="4" fill="#0ff" opacity="0.8"/>
+  <rect x="420" y="44" width="50" height="14" rx="7" fill="#111" stroke="#f0f" stroke-width="1"/>
+  <rect x="480" y="44" width="50" height="14" rx="7" fill="#f0f" opacity="0.3"/>
+  <rect x="40" y="95" width="520" height="50" rx="8" fill="#111" stroke="#333" stroke-width="1"/>
+  <rect x="60" y="112" width="300" height="14" rx="4" fill="#222"/>
+  <rect x="480" y="108" width="60" height="24" rx="12" fill="#0ff" opacity="0.3"/>
+  <rect x="40" y="165" width="520" height="45" rx="6" fill="#111" stroke="#0ff" stroke-width="1" opacity="0.4"/>
+  <rect x="60" y="180" width="12" height="12" rx="2" fill="#0ff" opacity="0.8"/>
+  <rect x="85" y="181" width="200" height="10" rx="4" fill="#e5e5e5" opacity="0.8"/>
+  <rect x="490" y="178" width="50" height="16" rx="8" fill="#f00" opacity="0.4"/>
+  <rect x="40" y="220" width="520" height="45" rx="6" fill="#111" stroke="#0f0" stroke-width="1" opacity="0.3"/>
+  <rect x="60" y="235" width="12" height="12" rx="2" fill="#0f0" opacity="0.6"/>
+  <rect x="85" y="236" width="180" height="10" rx="4" fill="#666" text-decoration="line-through"/>
+  <line x1="85" y1="241" x2="265" y2="241" stroke="#666" stroke-width="1"/>
+  <rect x="40" y="275" width="520" height="45" rx="6" fill="#111" stroke="#f0f" stroke-width="1" opacity="0.4"/>
+  <rect x="60" y="290" width="12" height="12" rx="2" fill="#f0f" opacity="0.8"/>
+  <rect x="85" y="291" width="240" height="10" rx="4" fill="#e5e5e5" opacity="0.8"/>
+  <rect x="490" y="288" width="50" height="16" rx="8" fill="#f90" opacity="0.4"/>
+  <rect x="40" y="330" width="520" height="45" rx="6" fill="#111" stroke="#0ff" stroke-width="1" opacity="0.3"/>
+  <rect x="60" y="345" width="12" height="12" rx="2" fill="#0ff" opacity="0.5"/>
+  <rect x="85" y="346" width="160" height="10" rx="4" fill="#e5e5e5" opacity="0.8"/>
+  <rect x="490" y="343" width="50" height="16" rx="8" fill="#0ff" opacity="0.3"/>
+  <text x="300" y="395" text-anchor="middle" fill="#0ff" font-family="monospace" font-size="12" opacity="0.5">NEXUS TODO — Cyberpunk Task Manager</text>
+</svg>
