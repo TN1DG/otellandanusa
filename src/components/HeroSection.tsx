@@ -8,7 +8,7 @@ export function HeroSection() {
           Hello, I&apos;m
         </p>
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Otellandanusa
+          Oluwatobi Tella Ndanusa
         </h1>
         <div className="w-16 h-px bg-neutral-600 mx-auto mb-6" />
         <p className="text-xl md:text-2xl text-neutral-300 mb-4">

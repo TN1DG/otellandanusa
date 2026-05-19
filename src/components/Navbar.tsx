@@ -48,7 +48,11 @@ export function Navbar() {
           href="/"
           className="text-xl font-bold text-neutral-100 hover:text-white transition-colors"
         >
-          Otellandanusa
+          <span className="flex items-center gap-0.5 tracking-tight">
+            <span className="text-white font-extrabold">TN</span>
+            <span className="text-emerald-400 font-black text-2xl leading-none -mt-0.5">1</span>
+            <span className="text-white font-extrabold">DG</span>
+          </span>
         </Link>
 
         {/* Desktop links */}

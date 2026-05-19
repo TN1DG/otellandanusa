@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Have a tech project idea? Let's collaborate and build something amazing together. Get in touch with Otellandanusa.",
+    "Have a tech project idea? Let's collaborate and build something amazing together. Get in touch with Oluwatobi Tella Ndanusa.",
 };
 
 export default function ContactPage() {

@@ -12,23 +12,23 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://otellandanusa.vercel.app"),
   title: {
-    default: "Otellandanusa | Full-Stack Developer",
-    template: "%s | Otellandanusa",
+    default: "Oluwatobi Tella Ndanusa | Full-Stack Developer",
+    template: "%s | Oluwatobi Tella Ndanusa",
   },
   description:
     "Full-stack developer specializing in modern web applications. View my portfolio and let's build something great together.",
   openGraph: {
-    title: "Otellandanusa | Full-Stack Developer",
+    title: "Oluwatobi Tella Ndanusa | Full-Stack Developer",
     description:
       "Full-stack developer specializing in modern web applications. View my portfolio and let's build something great together.",
     url: "https://otellandanusa.vercel.app",
-    siteName: "Otellandanusa",
+    siteName: "Oluwatobi Tella Ndanusa",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Otellandanusa | Full-Stack Developer",
+    title: "Oluwatobi Tella Ndanusa | Full-Stack Developer",
     description:
       "Full-stack developer specializing in modern web applications.",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Otellandanusa",
+  name: "Oluwatobi Tella Ndanusa",
   jobTitle: "Full-Stack Developer",
   url: "https://otellandanusa.vercel.app",
   sameAs: [
