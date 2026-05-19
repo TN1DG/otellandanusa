@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Explore my projects — from e-commerce platforms to AI interfaces. Full-stack applications built with modern technologies.",
+    "Ideas I've brought to life — from concept to launch. Products and tools built to solve real problems.",
 };
 
 export default function PortfolioPage() {
@@ -15,12 +15,12 @@ export default function PortfolioPage() {
         {/* Page header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My Work
+            What I&apos;ve Built
           </h1>
           <div className="w-16 h-px bg-neutral-600 mx-auto mb-6" />
           <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-            A selection of projects I&apos;ve built. Each one taught me
-            something new and pushed me to grow as a developer.
+            Every project starts with a problem worth solving. Here are
+            some of the ideas I&apos;ve taken from zero to one.
           </p>
         </div>
 

@@ -12,19 +12,19 @@ export function HeroSection() {
         </h1>
         <div className="w-16 h-px bg-neutral-600 mx-auto mb-6" />
         <p className="text-xl md:text-2xl text-neutral-300 mb-4">
-          Full-Stack Developer
+          Builder &middot; Innovator &middot; Developer
         </p>
         <p className="text-lg text-neutral-500 max-w-xl mx-auto mb-10 leading-relaxed">
-          I build modern, scalable web applications from front to back.
-          Passionate about clean code, great user experiences, and turning
-          ideas into reality.
+          I don&apos;t just write code — I build products that solve real problems.
+          From concept to launch, I turn bold ideas into working software
+          that people actually use.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/portfolio"
             className="rounded-full border border-neutral-500 px-8 py-3 text-lg font-medium text-white transition-all hover:bg-neutral-800 hover:border-neutral-400"
           >
-            View My Work
+            See What I&apos;ve Built
           </Link>
           <Link
             href="/contact"

@@ -12,15 +12,15 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://otellandanusa.vercel.app"),
   title: {
-    default: "Oluwatobi Tella Ndanusa | Full-Stack Developer",
+    default: "Oluwatobi Tella Ndanusa | Builder & Innovator",
     template: "%s | Oluwatobi Tella Ndanusa",
   },
   description:
-    "Full-stack developer specializing in modern web applications. View my portfolio and let's build something great together.",
+    "Innovator and builder turning bold ideas into real products. Explore my work and let's create something that matters.",
   openGraph: {
-    title: "Oluwatobi Tella Ndanusa | Full-Stack Developer",
+    title: "Oluwatobi Tella Ndanusa | Builder & Innovator",
     description:
-      "Full-stack developer specializing in modern web applications. View my portfolio and let's build something great together.",
+      "Innovator and builder turning bold ideas into real products. Explore my work and let's create something that matters.",
     url: "https://otellandanusa.vercel.app",
     siteName: "Oluwatobi Tella Ndanusa",
     type: "website",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oluwatobi Tella Ndanusa | Full-Stack Developer",
+    title: "Oluwatobi Tella Ndanusa | Builder & Innovator",
     description:
-      "Full-stack developer specializing in modern web applications.",
+      "Innovator and builder turning bold ideas into real products.",
   },
   robots: { index: true, follow: true },
 };
@@ -39,7 +39,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Oluwatobi Tella Ndanusa",
-  jobTitle: "Full-Stack Developer",
+  jobTitle: "Builder & Innovator",
   url: "https://otellandanusa.vercel.app",
   sameAs: [
     "https://github.com/otellandanusa",
