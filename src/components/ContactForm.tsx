@@ -1,20 +1,44 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useState, useTransition, type FormEvent } from 'react';
+import { CheckCircle2, Send, TriangleAlert } from 'lucide-react';
+import { sendContactEmail } from '@/app/actions/send-contact-email';
 
-export function ContactForm() {
+interface ContactFormProps {
+  onSuccess?: () => void;
+}
+
+export function ContactForm({ onSuccess }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get('name') ?? '');
+    const email = String(formData.get('email') ?? '');
+    const message = String(formData.get('message') ?? '');
+
+    startTransition(async () => {
+      const result = await sendContactEmail({ name, email, message });
+      if (result.ok) {
+        setSubmitted(true);
+        onSuccess?.();
+      } else {
+        setError(result.error ?? 'Something went wrong. Please try again.');
+      }
+    });
   }
 
   if (submitted) {
     return (
       <div className="text-center py-12">
-        <div className="text-5xl mb-4 text-neutral-300">&#10003;</div>
-        <h3 className="text-2xl font-bold text-white mb-2">
+        <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-glitch-cyan" />
+        <h3 className="text-2xl font-bold text-white font-display mb-2">
           Message Sent!
         </h3>
         <p className="text-neutral-400">
@@ -26,10 +50,16 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {error && (
+        <div className="flex items-start gap-3 border border-glitch-magenta/40 bg-glitch-magenta/10 px-4 py-3 clip-angular-sm text-sm text-neutral-200">
+          <TriangleAlert className="h-5 w-5 shrink-0 text-glitch-magenta" />
+          <p>{error}</p>
+        </div>
+      )}
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-neutral-300 mb-2"
+          className="block text-sm font-medium text-neutral-300 mb-2 font-mono uppercase tracking-wide"
         >
           Your Name
         </label>
@@ -38,14 +68,14 @@ export function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-neutral-200 placeholder-neutral-600 focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 focus:outline-none transition"
+          className="w-full clip-angular-sm border border-neutral-700 bg-neutral-800 px-4 py-3 text-neutral-200 placeholder-neutral-600 focus:border-glitch-cyan focus:ring-1 focus:ring-glitch-cyan focus:outline-none transition"
           placeholder="John Doe"
         />
       </div>
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-neutral-300 mb-2"
+          className="block text-sm font-medium text-neutral-300 mb-2 font-mono uppercase tracking-wide"
         >
           Your Email
         </label>
@@ -54,14 +84,14 @@ export function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-neutral-200 placeholder-neutral-600 focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 focus:outline-none transition"
+          className="w-full clip-angular-sm border border-neutral-700 bg-neutral-800 px-4 py-3 text-neutral-200 placeholder-neutral-600 focus:border-glitch-cyan focus:ring-1 focus:ring-glitch-cyan focus:outline-none transition"
           placeholder="john@example.com"
         />
       </div>
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-neutral-300 mb-2"
+          className="block text-sm font-medium text-neutral-300 mb-2 font-mono uppercase tracking-wide"
         >
           Project Idea / Message
         </label>
@@ -70,15 +100,17 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-neutral-200 placeholder-neutral-600 focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500 focus:outline-none transition resize-none"
+          className="w-full clip-angular-sm border border-neutral-700 bg-neutral-800 px-4 py-3 text-neutral-200 placeholder-neutral-600 focus:border-glitch-cyan focus:ring-1 focus:ring-glitch-cyan focus:outline-none transition resize-none"
           placeholder="Tell me about the project you have in mind..."
         />
       </div>
       <button
         type="submit"
-        className="w-full rounded-full border border-neutral-500 py-3 text-lg font-medium text-white transition-all hover:bg-neutral-800 hover:border-neutral-400"
+        disabled={isPending}
+        className="w-full flex items-center justify-center gap-2 clip-angular border border-neutral-500 py-3 text-lg font-medium text-white transition-all hover:bg-neutral-800 hover:border-glitch-cyan disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Send Message
+        <Send className="h-5 w-5" />
+        {isPending ? 'Sending…' : 'Send Message'}
       </button>
     </form>
   );

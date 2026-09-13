@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ContactModalProvider } from "@/context/ContactModalContext";
+import { ContactModal } from "@/components/ContactModal";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -9,28 +11,38 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://otellandanusa.vercel.app"),
   title: {
-    default: "Oluwatobi Tella Ndanusa | Builder & Innovator",
-    template: "%s | Oluwatobi Tella Ndanusa",
+    default: "TN1DCreator | Builder, Innovator & QA Engineer",
+    template: "%s | TN1DCreator",
   },
   description:
-    "Innovator and builder turning bold ideas into real products. Explore my work and let's create something that matters.",
+    "Builder and QA engineer turning bold ideas into real, well-tested products — from Playwright automation to production launches.",
   openGraph: {
-    title: "Oluwatobi Tella Ndanusa | Builder & Innovator",
+    title: "TN1DCreator | Builder, Innovator & QA Engineer",
     description:
-      "Innovator and builder turning bold ideas into real products. Explore my work and let's create something that matters.",
+      "Builder and QA engineer turning bold ideas into real, well-tested products — from Playwright automation to production launches.",
     url: "https://otellandanusa.vercel.app",
-    siteName: "Oluwatobi Tella Ndanusa",
+    siteName: "TN1DCreator",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oluwatobi Tella Ndanusa | Builder & Innovator",
+    title: "TN1DCreator | Builder, Innovator & QA Engineer",
     description:
-      "Innovator and builder turning bold ideas into real products.",
+      "Builder and QA engineer turning bold ideas into real, well-tested products.",
   },
   robots: { index: true, follow: true },
 };
@@ -39,11 +51,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Oluwatobi Tella Ndanusa",
-  jobTitle: "Builder & Innovator",
+  jobTitle: "Builder, Innovator & QA Engineer",
   url: "https://otellandanusa.vercel.app",
   sameAs: [
-    "https://github.com/otellandanusa",
-    "https://linkedin.com/in/otellandanusa",
+    "https://github.com/TN1DG",
+    "https://www.linkedin.com/in/oluwatobi-tella-ndanusa/",
   ],
 };
 
@@ -53,17 +65,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#1a1a1a] text-neutral-200">
-        <Navbar />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
+      <body className="min-h-screen flex flex-col bg-(--color-ground) text-neutral-200">
+        <ContactModalProvider>
+          <Navbar />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+          <ContactModal />
+        </ContactModalProvider>
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ export const projects: Project[] = [
     techStack: ["Expo", "TypeScript", "Firebase", "Supabase", "Zustand"],
     liveUrl: "https://bisride.vercel.app",
     repoUrl: "https://github.com/TN1DG/BiSRide",
-    image: "/images/projects/bisride.svg",
+    image: "/images/projects/bisride.jpg",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Tailwind CSS", "Supabase", "OpenAI API"],
     liveUrl: "https://get-more-diners-gules.vercel.app",
     repoUrl: "https://github.com/TN1DG/get-more-diners",
-    image: "/images/projects/get-more-diners.svg",
+    image: "/images/projects/get-more-diners.jpg",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     techStack: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://ytg-landing-page-v2.vercel.app",
     repoUrl: "https://github.com/TN1DG/ytg-landing-page-v2",
-    image: "/images/projects/ytg-landing.svg",
+    image: "/images/projects/ytg-landing.jpg",
   },
   {
     id: 4,
@@ -47,6 +47,6 @@ export const projects: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://futuristic-todo-app.vercel.app",
     repoUrl: "https://github.com/TN1DG/futuristic-todo-app",
-    image: "/images/projects/nexus-todo.svg",
+    image: "/images/projects/nexus-todo.jpg",
   },
 ];
