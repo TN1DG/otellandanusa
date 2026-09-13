@@ -45,7 +45,7 @@ export function QASection() {
               }}
               className="flex items-center gap-2 clip-angular-sm border border-neutral-700 px-4 py-2 text-sm font-mono text-neutral-300"
             >
-              <Icon className="h-4 w-4 text-glitch-cyan" />
+              <Icon className="h-4 w-4 text-glitch-green" />
               {label}
             </motion.span>
           ))}

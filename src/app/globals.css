@@ -15,6 +15,7 @@
   --color-glitch-cyan: #00fff2;
   --color-glitch-magenta: #ff00c8;
   --color-glitch-yellow: #f6ff00;
+  --color-glitch-green: #0f9960;
   --color-ground: #0a0a0c;
 
   --font-sans: var(--font-geist-sans);
@@ -90,14 +91,17 @@ html {
 @keyframes rgb-split {
   0% {
     filter: drop-shadow(2px 0 0 var(--color-glitch-cyan))
-      drop-shadow(-2px 0 0 var(--color-glitch-magenta));
+      drop-shadow(-2px 1px 0 var(--color-glitch-magenta))
+      drop-shadow(0 -1px 0 var(--color-glitch-green));
   }
   50% {
     filter: drop-shadow(-2px 0 0 var(--color-glitch-cyan))
-      drop-shadow(2px 0 0 var(--color-glitch-magenta));
+      drop-shadow(2px -1px 0 var(--color-glitch-magenta))
+      drop-shadow(0 1px 0 var(--color-glitch-green));
   }
   100% {
     filter: drop-shadow(2px 0 0 var(--color-glitch-cyan))
-      drop-shadow(-2px 0 0 var(--color-glitch-magenta));
+      drop-shadow(-2px 1px 0 var(--color-glitch-magenta))
+      drop-shadow(0 -1px 0 var(--color-glitch-green));
   }
 }
