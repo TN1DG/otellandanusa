@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, type Variants } from 'motion/react';
 import { GlitchText } from '@/components/GlitchText';
 import { useContactModal } from '@/context/ContactModalContext';
@@ -28,6 +29,18 @@ export function HeroSection() {
         initial="hidden"
         animate="show"
       >
+        <motion.div variants={item} className="flex justify-center mb-6">
+          <div className="relative h-24 w-24 md:h-32 md:w-32 clip-angular overflow-hidden border border-neutral-700 rgb-split-hover">
+            <Image
+              src="/images/profile/pfp2.jpg"
+              alt="Portrait of Oluwatobi Tella Ndanusa"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 96px, 128px"
+            />
+          </div>
+        </motion.div>
         <motion.p
           variants={item}
           className="text-neutral-500 font-mono font-medium text-lg mb-4 tracking-wide uppercase"

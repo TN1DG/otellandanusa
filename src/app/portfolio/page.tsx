@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { GitHubActivity } from "@/components/GitHubActivity";
+import { PageBackground } from "@/components/PageBackground";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -12,6 +13,11 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <div className="py-16 md:py-24">
+      <PageBackground
+        desktopSrc="/images/backgrounds/portfolio-desktop.jpg"
+        mobileSrc="/images/backgrounds/portfolio-mobile.jpg"
+        alt=""
+      />
       <div className="mx-auto max-w-6xl px-6">
         {/* Page header */}
         <div className="text-center mb-16">
