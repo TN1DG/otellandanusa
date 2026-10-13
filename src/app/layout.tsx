@@ -24,25 +24,25 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://otellandanusa.vercel.app"),
   title: {
-    default: "TN1DCreator | Builder, Innovator & QA Engineer",
+    default: "TN1DCreator | Full-Stack & QA Engineer",
     template: "%s | TN1DCreator",
   },
   description:
-    "Builder and QA engineer turning bold ideas into real, well-tested products — from Playwright automation to production launches.",
+    "Full-stack and QA engineer in London. I build and test care-records software and live web apps with Next.js, TypeScript, PostgreSQL and Playwright.",
   openGraph: {
-    title: "TN1DCreator | Builder, Innovator & QA Engineer",
+    title: "Oluwatobi Tella Ndanusa | Full-Stack & QA Engineer",
     description:
-      "Builder and QA engineer turning bold ideas into real, well-tested products — from Playwright automation to production launches.",
+      "I build software for places where mistakes matter, and I test it as if they do. Supstaff, Swole and more, with the code.",
     url: "https://otellandanusa.vercel.app",
     siteName: "TN1DCreator",
     type: "website",
-    locale: "en_US",
+    locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TN1DCreator | Builder, Innovator & QA Engineer",
+    title: "Oluwatobi Tella Ndanusa | Full-Stack & QA Engineer",
     description:
-      "Builder and QA engineer turning bold ideas into real, well-tested products.",
+      "I build software for places where mistakes matter, and I test it as if they do.",
   },
   robots: { index: true, follow: true },
 };
@@ -51,7 +51,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Oluwatobi Tella Ndanusa",
-  jobTitle: "Builder, Innovator & QA Engineer",
+  jobTitle: "Full-Stack & QA Engineer",
   url: "https://otellandanusa.vercel.app",
   sameAs: [
     "https://github.com/TN1DG",

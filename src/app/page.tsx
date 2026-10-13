@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/HeroSection";
+import { StatsStrip } from "@/components/StatsStrip";
 import { QASection } from "@/components/QASection";
 import { AISection } from "@/components/AISection";
 import { PageBackground } from "@/components/PageBackground";
@@ -12,6 +13,7 @@ export default function Home() {
         alt=""
       />
       <HeroSection />
+      <StatsStrip />
       <QASection />
       <AISection />
     </>

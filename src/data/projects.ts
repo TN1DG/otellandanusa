@@ -3,12 +3,39 @@ export interface Project {
   title: string;
   description: string;
   techStack: string[];
-  liveUrl: string;
+  /** Omit when there is no public demo (e.g. the app needs a staff login). */
+  liveUrl?: string;
   repoUrl: string;
   image: string;
+  /** Intrinsic size of `image`. Defaults to the 385×764 phone screenshot. */
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 export const projects: Project[] = [
+  {
+    id: 5,
+    title: "Supstaff",
+    description:
+      "A records system for supported-living services, designed around the night shifts I work as a social care worker. It replaces paper handovers, the medication administration record (eMAR), night building checks and maintenance reports. Four roles are enforced on the server, signing off medication needs a PIN, and every change is written to an audit log in the same transaction. Screenshot shows seeded demo data.",
+    techStack: ["Next.js 16", "TypeScript", "Drizzle", "PostgreSQL", "Auth.js"],
+    repoUrl: "https://github.com/TN1DG/supstaff",
+    image: "/images/projects/supstaff.jpg",
+    imageWidth: 1440,
+    imageHeight: 900,
+  },
+  {
+    id: 6,
+    title: "Swole",
+    description:
+      "A live workout and nutrition app. Log sets and track personal records, log food by hand or let a vision model estimate it from a photo, and train alongside friends with a feed, chat and streak challenges. A real-time Convex backend keeps a workout in sync across devices, and 441 automated tests run in CI on every push.",
+    techStack: ["React", "TypeScript", "Convex", "Vercel AI SDK", "Vitest"],
+    liveUrl: "https://swole.day",
+    repoUrl: "https://github.com/TN1DG/swole",
+    image: "/images/projects/swole.jpg",
+    imageWidth: 500,
+    imageHeight: 959,
+  },
   {
     id: 1,
     title: "BiSRide",

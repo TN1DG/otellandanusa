@@ -58,15 +58,16 @@ export function HeroSection() {
           variants={item}
           className="text-xl md:text-2xl text-neutral-300 mb-4 font-display"
         >
-          Builder &middot; Innovator &middot; QA Engineer
+          Full-Stack &amp; QA Engineer &middot; London
         </motion.p>
         <motion.p
           variants={item}
           className="text-lg text-neutral-500 max-w-xl mx-auto mb-10 leading-relaxed"
         >
-          I don&apos;t just write code — I build products that solve real problems,
-          and I make sure they actually work. Playwright automation, manual test
-          design, and Jira/TestRail-driven QA process keep what I ship reliable.
+          I build software for places where mistakes matter, and I test it as if
+          they do. I work nights as a social care worker, and I&apos;m building
+          Supstaff, a records system for that work: from the database schema to
+          the screen staff use at 3 a.m.
         </motion.p>
         <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -75,6 +76,14 @@ export function HeroSection() {
           >
             See What I&apos;ve Built
           </Link>
+          <a
+            href="/cv/Oluwatobi-Tella-Ndanusa-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="clip-angular border border-neutral-700 px-8 py-3 text-lg font-medium text-neutral-400 transition-all hover:bg-neutral-800 hover:text-neutral-200 hover:border-glitch-green"
+          >
+            One-Page CV
+          </a>
           <button
             type="button"
             onClick={openModal}
