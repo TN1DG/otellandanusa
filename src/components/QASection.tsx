@@ -1,11 +1,13 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { FlaskConical, Bug, ClipboardCheck, ClipboardList } from 'lucide-react';
+import { FlaskConical, Bug, ClipboardCheck, ClipboardList, Repeat } from 'lucide-react';
 import { GlitchText } from '@/components/GlitchText';
 
 const skills = [
   { label: 'Playwright', icon: FlaskConical },
+  { label: 'Vitest', icon: FlaskConical },
+  { label: 'Regression Testing', icon: Repeat },
   { label: 'Manual Test Design', icon: ClipboardCheck },
   { label: 'Jira', icon: Bug },
   { label: 'TestRail', icon: ClipboardList },
@@ -20,10 +22,11 @@ export function QASection() {
         </h2>
         <div className="w-16 h-px bg-neutral-600 mx-auto mb-6" />
         <p className="text-lg text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Alongside building products, I work as a QA engineer — writing automated
-          regression suites with Playwright, designing manual test cases for the
-          edge cases automation misses, and keeping bugs and test coverage
-          organized in Jira and TestRail so nothing ships broken.
+          As a QA tester intern at Evisions Group, I worked with the CEO on Clynk,
+          a ticketing platform: a 79-case regression suite, targeted packs for bug
+          fixes, and checks in the database rather than trusting the screen. My own
+          products ship with their tests: 441 automated tests in CI on Swole, and
+          44 Playwright end-to-end tests on a trading tool.
         </p>
 
         <motion.div

@@ -27,9 +27,9 @@ export function ProjectCard({ project, reversed }: ProjectCardProps) {
           <Image
             src={project.image}
             alt={`Screenshot of ${project.title}`}
-            width={385}
-            height={764}
-            className="w-auto h-auto max-h-[70vh] object-contain"
+            width={project.imageWidth ?? 385}
+            height={project.imageHeight ?? 764}
+            className="w-auto h-auto max-w-full max-h-[70vh] object-contain"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
@@ -55,15 +55,17 @@ export function ProjectCard({ project, reversed }: ProjectCardProps) {
           ))}
         </div>
         <div className="flex gap-4 pt-2">
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 clip-angular-sm border border-neutral-500 px-6 py-2 text-sm font-medium text-neutral-200 transition-colors hover:bg-neutral-800 hover:border-glitch-cyan"
-          >
-            <ExternalLink className="h-4 w-4" />
-            Live Demo
-          </a>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 clip-angular-sm border border-neutral-500 px-6 py-2 text-sm font-medium text-neutral-200 transition-colors hover:bg-neutral-800 hover:border-glitch-cyan"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Live Demo
+            </a>
+          )}
           <a
             href={project.repoUrl}
             target="_blank"
