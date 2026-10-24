@@ -25,6 +25,17 @@ export const projects: Project[] = [
     imageHeight: 900,
   },
   {
+    id: 7,
+    title: "BoardReady",
+    description:
+      "Closes a startup's month on Seapoint and drafts its investor update, built so the language model never types a number. Code writes the exact arguments for every Seapoint query and the agent only runs them, read-only. The model writes placeholders, code fills in every figure, and any amount the model typed itself is flagged as unverified. A fix to the books runs only after a person clicks Approve, through a separate agent limited to two write tools, and every write is logged. Built on my own at the Seapoint FinOps Hackathon in London. Screenshot shows Seapoint staging data.",
+    techStack: ["Python", "Claude Code CLI", "Seapoint MCP", "JavaScript"],
+    repoUrl: "https://github.com/TN1DG/boardready",
+    image: "/images/projects/boardready.jpg",
+    imageWidth: 1440,
+    imageHeight: 900,
+  },
+  {
     id: 6,
     title: "Swole",
     description:

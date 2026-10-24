@@ -102,7 +102,8 @@ Defined in [`src/app/globals.css`](src/app/globals.css) as Tailwind v4 theme tok
 - **Colors** — `--color-glitch-cyan` (`#00fff2`), `--color-glitch-magenta` (`#ff00c8`), `--color-glitch-yellow` (`#f6ff00`), `--color-ground` (`#0a0a0c`)
 - **Type** — Geist Sans (body), Space Grotesk (`font-display`, headings), JetBrains Mono (`font-mono`, labels/badges/nav)
 - **Shape** — `clip-angular` / `clip-angular-sm` utilities replace rounded corners everywhere with angular clipped-corner polygons
-- **Texture** — `.scanline-overlay` (CRT-style scanlines) and `.rgb-split-hover` (chromatic-aberration hover on project screenshots)
+- **Texture** — `.scanline-overlay` (CRT-style scanlines) and `.rgb-split-hover` (chromatic-aberration hover on the profile photo)
+- **Project previews** — [`ProjectPreview`](src/components/ProjectPreview.tsx) puts every screenshot on the same dot-grid stage (`.preview-stage`): tall screenshots in a phone frame, wide ones in a browser frame. With a mouse the frame tilts toward the pointer and splits into cyan/magenta fringes; clicking or tapping opens the full-size screenshot in a dialog. Reduced-motion users get no tilt.
 
 ## License
 
