@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'motion/react';
 import { ExternalLink, Code2 } from 'lucide-react';
 import type { Project } from '@/data/projects';
+import { ProjectPreview } from '@/components/ProjectPreview';
 
 interface ProjectCardProps {
   project: Project;
@@ -21,18 +21,9 @@ export function ProjectCard({ project, reversed }: ProjectCardProps) {
         reversed ? 'md:flex-row-reverse' : 'md:flex-row'
       } gap-8 md:gap-12 items-center py-12 border-b border-neutral-800 last:border-b-0`}
     >
-      {/* Project image — shown in full at its real aspect ratio, never cropped */}
-      <div className="w-full md:w-1/2 flex justify-center">
-        <div className="clip-angular overflow-hidden border border-neutral-700 bg-neutral-800 rgb-split-hover max-h-[70vh]">
-          <Image
-            src={project.image}
-            alt={`Screenshot of ${project.title}`}
-            width={project.imageWidth ?? 385}
-            height={project.imageHeight ?? 764}
-            className="w-auto h-auto max-w-full max-h-[70vh] object-contain"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
+      {/* Same-shaped stage for every project; phone or browser frame inside */}
+      <div className="w-full md:w-1/2">
+        <ProjectPreview project={project} />
       </div>
 
       {/* Project info */}
