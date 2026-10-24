@@ -42,7 +42,15 @@ function addressLabel(project: Project) {
  * With a mouse, the device tilts toward the pointer and splits into
  * cyan/magenta fringes; clicking or tapping opens the full-size screenshot.
  */
-export function ProjectPreview({ project }: { project: Project }) {
+export function ProjectPreview({
+  project,
+  eager = false,
+}: {
+  project: Project;
+  /** Load the screenshot straight away, for a preview near the top of the page. */
+  eager?: boolean;
+}) {
+  const loading = eager ? 'eager' : undefined;
   const width = project.imageWidth ?? DEFAULT_WIDTH;
   const height = project.imageHeight ?? DEFAULT_HEIGHT;
   const isPhone = height > width;
@@ -123,9 +131,9 @@ export function ProjectPreview({ project }: { project: Project }) {
               style={{ x: magentaX, y: magentaY, opacity: fringeOpacity }}
             />
             {isPhone ? (
-              <PhoneFrame project={project} />
+              <PhoneFrame project={project} loading={loading} />
             ) : (
-              <BrowserFrame project={project} width={width} height={height} />
+              <BrowserFrame project={project} width={width} height={height} loading={loading} />
             )}
           </motion.span>
         </span>
@@ -151,7 +159,7 @@ export function ProjectPreview({ project }: { project: Project }) {
   );
 }
 
-function PhoneFrame({ project }: { project: Project }) {
+function PhoneFrame({ project, loading }: { project: Project; loading?: 'eager' }) {
   return (
     <span className="relative block h-full clip-angular bg-neutral-600 p-px">
       <span className="block h-full clip-angular bg-[#0e0e11] p-[6px]">
@@ -161,6 +169,7 @@ function PhoneFrame({ project }: { project: Project }) {
             alt={`Screenshot of ${project.title}`}
             fill
             sizes="(max-width: 767px) 45vw, 240px"
+            loading={loading}
             className="object-cover object-top"
           />
         </span>
@@ -173,10 +182,12 @@ function BrowserFrame({
   project,
   width,
   height,
+  loading,
 }: {
   project: Project;
   width: number;
   height: number;
+  loading?: 'eager';
 }) {
   return (
     <span className="relative block clip-angular bg-neutral-600 p-px">
@@ -192,6 +203,7 @@ function BrowserFrame({
           width={width}
           height={height}
           sizes="(max-width: 767px) 92vw, 520px"
+          loading={loading}
           className="block h-auto w-full"
         />
       </span>

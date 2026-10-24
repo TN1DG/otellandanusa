@@ -40,12 +40,14 @@ src/
   components/
     HeroSection, QASection, AISection    Home-page sections
     Navbar, Footer                        Site chrome
-    ProjectCard, GitHubActivity(Grid)     Portfolio page
+    ProjectSection, ProjectPreview        Portfolio page: one full-width section per project
+    project-scenes/                       The looping animation in each project section
+    GitHubActivity(Grid)                  Portfolio page: live GitHub feed
     ContactModal, ContactForm             "Let's Talk" flow
     GlitchText                            Reusable RGB-split text effect
     PageBackground                        Responsive per-page background
   context/ContactModalContext.tsx  Global modal open/close state
-  data/projects.ts                  Curated case-study data
+  data/projects.ts                  Curated case-study data, incl. each project's theme and accent
   lib/github.ts                     GitHub REST API fetch + cache
   hooks/useScrollPosition.ts
 public/images/
@@ -104,6 +106,19 @@ Defined in [`src/app/globals.css`](src/app/globals.css) as Tailwind v4 theme tok
 - **Shape** — `clip-angular` / `clip-angular-sm` utilities replace rounded corners everywhere with angular clipped-corner polygons
 - **Texture** — `.scanline-overlay` (CRT-style scanlines) and `.rgb-split-hover` (chromatic-aberration hover on the profile photo)
 - **Project previews** — [`ProjectPreview`](src/components/ProjectPreview.tsx) puts every screenshot on the same dot-grid stage (`.preview-stage`): tall screenshots in a phone frame, wide ones in a browser frame. With a mouse the frame tilts toward the pointer and splits into cyan/magenta fringes; clicking or tapping opens the full-size screenshot in a dialog. Reduced-motion users get no tilt.
+- **Project sections** — [`ProjectSection`](src/components/ProjectSection.tsx) gives every project its own full-width section, themed from what the project is about. Each project in [`projects.ts`](src/data/projects.ts) sets an `accent` (taken from the product's own UI) and a `theme`, which picks three things:
+
+  | Project | Background | How the section arrives | Looping scene |
+  |---|---|---|---|
+  | Supstaff | Lit windows of a building at night | Written in, like log entries | A night shift's checks landing in the log, 22:00 to 07:00 |
+  | BoardReady | Ruled ledger paper | Resolves out of a blur | `[[placeholders]]` replaced by figures filled in by code |
+  | Swole | Barbell knurling | Springy, like a rep | Bench-press sets rising to a new PR |
+  | BiSRide | Street grid | Rides in from the side | Delivery posted, accepted, rider travels to drop-off |
+  | Get More Diners | Gingham tablecloth | Slow, warm rise | An AI-written offer sent by SMS and email |
+  | YTG | Leaderboard columns | Drops into place | Your portfolio climbing a ranking |
+  | Nexus Todo | Neon horizon grid | Short glitch | Adding and filtering tasks on a neon command line |
+
+  Scenes live in [`src/components/project-scenes/`](src/components/project-scenes) and only run while on screen. With reduced motion, sections fade in without movement and each scene shows its finished state.
 
 ## License
 
